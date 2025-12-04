@@ -3,7 +3,11 @@ import './App.css';
 import About from './about';
 import Plans from './Plans';
 import SignUp from './signUp';
-import SingIn from './signIn';
+import SingIn from './LogIn';
+import { Fragment } from 'react/jsx-runtime';
+import { useState, useEffect } from 'react';
+import moon from './image/rasm.jpg';
+import sun from './image/sun.jpg';
 function App() {
 
   return (
@@ -13,12 +17,39 @@ function App() {
   );
 }
 function Home() {
-  
+
+   const [Navbar, setNavbar] = useState(() =>{
+    return localStorage.getItem('Navbar') || 'Navbar'
+   })
+   const [image, setImage] = useState(() =>{
+    return localStorage.getItem('image') === 'sun' ? sun: moon
+   })
+   useEffect(() =>{
+    localStorage.setItem('Navbar', Navbar)
+    localStorage.setItem('image', image === sun ? 'sun' : 'moon')
+   })
+   const changeNavbar = () =>{
+    if(Navbar === 'Navbar'){
+      setNavbar('NavbarLight')
+      setImage(sun)
+    }else{
+      setNavbar('Navbar')
+      setImage(moon)
+    }
+   }
   return (
+   
    <BrowserRouter>
-   <nav>
-    <Link to="/">Home</Link> <Link to="/about">About</Link>  <Link to='/Plans'>Plans</Link> <Link to='/SignIn'>SignIn</Link> <Link to='/SignUp'>SignUp</Link>
-   </nav>
+   <Fragment>
+    <div className={Navbar}>
+      <Link to="/">Home</Link>
+     <Link to="/about">About</Link> 
+     <Link to='/Plans'>Plans</Link> 
+     <Link to='/SignIn'>Log-In</Link> 
+     <Link to='/SignUp'>Sign-Up</Link>
+     <img src={image} alt="" className='img' onClick={changeNavbar} />
+     </div>
+   </Fragment>
    <Routes>
     <Route path="/" element={<App />}></Route>
     <Route path='/about' element={<About />}></Route>

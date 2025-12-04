@@ -1,1 +1,34 @@
-
+.Navbar{
+    width: 1024px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 470px;
+    background: linear-gradient(180deg, #000000, #4e4e4e);
+}
+.Navbar a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+   margin-top: 15px;
+}
+.img{
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
+.NavbarLight{
+    width: 1024px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 470px;
+    background: linear-gradient(180deg, #ffffff,  #9c9c9c);
+}
+.NavbarLight a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+   margin-top: 15px;
+}
