@@ -1,1 +1,37 @@
+.App{
+color: aqua;
+}
+.Navbar {
+margin-left: 400px;
+width: 1024px;
+height: 60px;
+display: flex;
+flex-direction: row;
+justify-content:space-around;
+background: linear-gradient(135deg, #020911, #343435);
+   
+}
 
+.Navbarbl{
+margin-left: 400px;
+width: 1024px;
+height: 60px;
+display: flex;
+flex-direction: row;
+justify-content:space-around;
+background: linear-gradient(135deg, #e3e7eb, #d7d7dd);
+   
+}
+.Navbarbl a {
+    display: flex;
+    margin-top: 15px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.Navbar a {
+    display: flex;
+    margin-top: 15px;
+    color: rgb(230, 218, 218);
+    text-decoration: none;
+}
