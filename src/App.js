@@ -6,18 +6,25 @@ import SignUp from './signUp';
 import SingIn from './LogIn';
 import { Fragment } from 'react/jsx-runtime';
 import { useState, useEffect } from 'react';
-import moon from './image/rasm.jpg';
+import moon from './image/moon.jpg';
 import sun from './image/sun.jpg';
 function App() {
 
   return (
     <div className="App">
-      <h1>Home</h1>;
+      <h1>Welcome visitor to our website. Please SingUp: <Link to='/SignUp'>Sign-Up</Link> </h1>
     </div>
   );
 }
 function Home() {
-
+   const body = document.getElementsByTagName('body')
+   const colors = () =>{
+    body.style.background-color = '#18181f'
+   }
+   colors()
+   const [Body, SetBody] = useState(() =>{
+    return localStorage.getItem('Body') || 'Body'
+   })
    const [Navbar, setNavbar] = useState(() =>{
     return localStorage.getItem('Navbar') || 'Navbar'
    })
@@ -25,14 +32,17 @@ function Home() {
     return localStorage.getItem('image') === 'sun' ? sun: moon
    })
    useEffect(() =>{
+    localStorage.setItem('Body', Body)
     localStorage.setItem('Navbar', Navbar)
     localStorage.setItem('image', image === sun ? 'sun' : 'moon')
    })
    const changeNavbar = () =>{
     if(Navbar === 'Navbar'){
+      SetBody('')
       setNavbar('NavbarLight')
       setImage(sun)
     }else{
+     
       setNavbar('Navbar')
       setImage(moon)
     }

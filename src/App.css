@@ -1,10 +1,8 @@
 .Navbar{
-    width: 1024px;
     height: 60px;
     display: flex;
     justify-content: space-around;
-    margin-left: 470px;
-    background: linear-gradient(180deg, #000000, #4e4e4e);
+    background: linear-gradient(180deg,#2b2b38,#2f2f3b);
 }
 .Navbar a{
     color: white;
@@ -18,17 +16,26 @@
     height: 40px;
     margin-top: 10px;
 }
+
 .NavbarLight{
-    width: 1024px;
     height: 60px;
     display: flex;
     justify-content: space-around;
-    margin-left: 470px;
-    background: linear-gradient(180deg, #ffffff,  #9c9c9c);
+    background: linear-gradient(180deg, #e4e2e2,  #ffffff);
 }
 .NavbarLight a{
     color: black;
     text-decoration: none;
     font-size: 20px;
    margin-top: 15px;
+}
+@media ( max-width: 1024px) {
+  .Navbar {
+     width: 100%;
+  }
+}
+@media ( max-width: 1024px) {
+  .NavbarLight {
+     width: 100%;
+  }
 }
