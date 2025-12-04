@@ -3,7 +3,7 @@ import './App.css';
 import About from './about';
 import Plans from './Plans';
 import SignUp from './signUp';
-import SingIn from './signIn';
+import SingIn from './LogIn';
 import { Fragment } from 'react/jsx-runtime';
 import { useState, useEffect } from 'react';
 import moon from './image/rasm.jpg';
@@ -44,7 +44,7 @@ function Home() {
       <Link to="/">Home</Link>
      <Link to="/about">About</Link> 
      <Link to='/Plans'>Plans</Link> 
-     <Link to='/SignIn'>Sign-In</Link> 
+     <Link to='/SignIn'>Log-In</Link> 
      <Link to='/SignUp'>Sign-Up</Link>
      <img src={image} alt="" className='img' onClick={changeNavbar} />
      </div>

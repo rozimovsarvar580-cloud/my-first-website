@@ -3,8 +3,8 @@
     height: 60px;
     display: flex;
     justify-content: space-around;
-    margin-left: 400px;
-    background: linear-gradient(90deg, #021316, #3b3b3b);
+    margin-left: 470px;
+    background: linear-gradient(180deg, #000000, #4e4e4e);
 }
 .Navbar a{
     color: white;
@@ -14,14 +14,17 @@
 }
 .img{
     border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
 }
 .NavbarLight{
     width: 1024px;
     height: 60px;
     display: flex;
     justify-content: space-around;
-    margin-left: 400px;
-    background: linear-gradient(90deg, #ccd1d1, #f0eeee);
+    margin-left: 470px;
+    background: linear-gradient(180deg, #ffffff,  #9c9c9c);
 }
 .NavbarLight a{
     color: black;
