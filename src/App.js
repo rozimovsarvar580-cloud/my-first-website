@@ -7,7 +7,9 @@ import SingIn from './LogIn';
 import { Fragment } from 'react/jsx-runtime';
 import { useState, useEffect } from 'react';
 import moon from './image/moon.jpg';
-import sun from './image/sun.jpg';
+import sun from './image/sun.jpg';import body from './body'
+import bodyBlack from './bodyBlack'
+
 function App() {
 
   return (
@@ -17,13 +19,11 @@ function App() {
   );
 }
 function Home() {
-   const body = document.getElementsByTagName('body')
-   const colors = () =>{
-    body.style.background-color = '#18181f'
-   }
-   colors()
+ 
+
+
    const [Body, SetBody] = useState(() =>{
-    return localStorage.getItem('Body') || 'Body'
+     return localStorage.getItem('Body') === 'body' ? body : bodyBlack
    })
    const [Navbar, setNavbar] = useState(() =>{
     return localStorage.getItem('Navbar') || 'Navbar'
@@ -32,25 +32,27 @@ function Home() {
     return localStorage.getItem('image') === 'sun' ? sun: moon
    })
    useEffect(() =>{
-    localStorage.setItem('Body', Body)
+    localStorage.setItem('Body',  Body === body ? 'body' : 'bodyBlack') 
     localStorage.setItem('Navbar', Navbar)
     localStorage.setItem('image', image === sun ? 'sun' : 'moon')
    })
    const changeNavbar = () =>{
     if(Navbar === 'Navbar'){
-      SetBody('')
+      SetBody(body)
       setNavbar('NavbarLight')
       setImage(sun)
     }else{
-     
+      SetBody(bodyBlack)
       setNavbar('Navbar')
       setImage(moon)
     }
+
    }
   return (
-   
+  
    <BrowserRouter>
    <Fragment>
+
     <div className={Navbar}>
       <Link to="/">Home</Link>
      <Link to="/about">About</Link> 
