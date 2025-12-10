@@ -17,6 +17,9 @@ body.dark input{
 body.dark input::placeholder{
     color: white;
 }
+body.dark input{
+    color: white;
+}
 body.light input{
     font-size: 20px;
     width: 600px;

@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <div className="about">
-        <h1>Welcome visitor to our website. If you want use our tool we suggest you <Link to='/SignUp'>Sign-Up</Link> <br /> 
+        <h1>Welcome visitor to our website. If you want use our tool we suggest you <Link to='/SignUp' className='link'>Sign-Up</Link> <br /> 
         and if you more information about our website go to about section
       </h1>
          
@@ -49,19 +49,21 @@ function Home() {
       setImage(moon)
     }
    }
-   const visiting = (e) =>{
-   console.log(e)
-   }
+  const active = (e) =>{
+       const href = e.target.href 
+       e.target.className = 'active'
+       
+  }
   return (
    
    <BrowserRouter>
    <Fragment>
     <div className={Navbar}>
-      <Link to="/Home" onClick={visiting}>Home</Link>
-     <Link to="/about"  onClick={visiting}>About</Link> 
-     <Link to='/Plans'  onClick={visiting}>Plans</Link> 
-     <Link to='/SignIn'  onClick={visiting}>Log-In</Link> 
-     <Link to='/SignUp'  onClick={visiting}>Sign-Up</Link>
+      <Link to="/Home"  className='a' onClick={active}>Home</Link>
+     <Link to="/about"  className='a' onClick={active}>About</Link> 
+     <Link to='/Plans'  className='a' onClick={active}>Plans</Link> 
+     <Link to='/SignIn' className='a' onClick={active}>Log-In</Link> 
+     <Link to='/SignUp' className='a' onClick={active} >Sign-Up</Link>
      <img src={image} alt="" className='img' onClick={changeNavbar} />
      </div>
    </Fragment>
