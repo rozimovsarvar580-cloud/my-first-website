@@ -1,7 +1,7 @@
 import { useState } from "react"
 import './signUp.css'
 import SingIn from "./LogIn"; 
-import { BrowserRouter, Routes, Route, Link  } from 'react-router-dom';
+import {  Routes, Route, Link  } from 'react-router-dom';
 function SingUp(){
     const [email, setEmail] = useState('')
       const [password, setPassword] = useState('')
@@ -20,7 +20,7 @@ function SingUp(){
       
       return(
           <div className='form2'> 
-           <h1>Already have account  <Link to='/SignIn'>Log-In</Link> </h1>
+           <h1>Already have account  <Link to='/SignIn' className='link'>Log-In</Link> </h1>
             <Routes>
                 <Route path='/SignIn' element={<SingIn />}></Route>
             </Routes>
