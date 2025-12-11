@@ -39,3 +39,30 @@
      width: 100%;
   }
 }
+body.light{
+  background-color: white;
+  color: black;
+}
+body.light a{
+  color: rgb(250, 249, 249);
+}
+body.dark{
+  background-color: #2b2b38;
+  color: white;
+
+}
+body.dark a{
+  color:white  ;
+}
+.about{
+  width: 1024px;
+  height: 100px;
+  margin-left: 400px;
+}
+.about h1{
+font-size: 20px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.visited{
+  background-color: aqua;
+}

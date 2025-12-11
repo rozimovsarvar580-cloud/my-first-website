@@ -3,7 +3,42 @@
     margin-left: 650px;
     width: 1024px;
 }
-.form1 input{
+                                                          
+body.dark input{
+    font-size: 20px;
+    width: 600px;
+    margin-bottom: 50px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color:  #2b2b38;
+    border-bottom: white 1px solid;
+}
+body.dark input::placeholder{
+    color: white;
+}
+body.dark input
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    color: white;
+}
+
+
+body.light input{
     font-size: 20px;
     width: 600px;
     margin-bottom: 50px;

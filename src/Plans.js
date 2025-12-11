@@ -1,9 +1,15 @@
- 
+
  function Plans() {
   return (
     <div>
-      <h1>Plans</h1>
+     <div className="oneDollar">
+      <div className="rasm">
+        <img src="" alt="" />
+      </div>
+      <button>Chose</button>
+     </div>
     </div>
   );
+
 }
 export default Plans
