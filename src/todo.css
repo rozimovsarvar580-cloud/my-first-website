@@ -1,0 +1,11 @@
+.todo{
+    width: 1024px;
+    margin-left: 650px;
+}
+ul li {
+    width: 500px;
+    color: black;
+    list-style-type: none;
+    background-color:aqua;
+    margin-top: 10px;
+}

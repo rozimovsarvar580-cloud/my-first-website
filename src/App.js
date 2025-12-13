@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route, Link  } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link ,NavLink } from 'react-router-dom';
 import './App.css';
 import About from './about';
-import Plans from './Plans';
+import Plans from './tool';
 import SignUp from './signUp';
 import SingIn from './LogIn';
 import { Fragment } from 'react/jsx-runtime';
@@ -49,22 +49,17 @@ function Home() {
       setImage(moon)
     }
    }
-  const active = (e) =>{
-       const href = e.target.href 
-       e.target.className = 'active'
-       
-  }
   return (
   
    <BrowserRouter>
    <Fragment>
-
+  
     <div className={Navbar}>
-      <Link to="/Home"  className='a' onClick={active}>Home</Link>
-     <Link to="/about"  className='a' onClick={active}>About</Link> 
-     <Link to='/Plans'  className='a' onClick={active}>Plans</Link> 
-     <Link to='/SignIn' className='a' onClick={active}>Log-In</Link> 
-     <Link to='/SignUp' className='a' onClick={active} >Sign-Up</Link>
+      <NavLink to="/Home"  className={({isActive}) =>( isActive ? 'active' : 'a')} >Home</NavLink>
+     <NavLink to="/about"  className={({isActive}) =>( isActive ? 'active' : 'a')} >About</NavLink> 
+     <NavLink to='/Plans'  className={({isActive}) =>( isActive ? 'active' : 'a')} >Tool</NavLink> 
+     <NavLink to='/SignIn' className={({isActive}) =>( isActive ? 'active' : 'a')} >Log-In</NavLink> 
+     <NavLink to='/SignUp' className={({isActive}) =>( isActive ? 'active' : 'a')} >Sign-Up</NavLink>
      <img src={image} alt="" className='img' onClick={changeNavbar} />
      </div>
    </Fragment>
@@ -73,7 +68,7 @@ function Home() {
     <Route path='/about' element={<About />}></Route>
     <Route path='/Plans' element={<Plans />}></Route>
     <Route path='/SignIn' element={<SingIn />}></Route>
-    <Route path='/SignUp' element={<SignUp />}></Route>
+    <Route path='/SignUp/*' element={<SignUp />}></Route>
    </Routes>
    </BrowserRouter> 
    
