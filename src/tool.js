@@ -18,14 +18,17 @@ import bin  from'./image/bin.jpg'
   setTodos([...todos, input])
   setInput('')
  }
+const del = (e) =>{
+e.target.parentElement.remove()
 
-
+}
+let index = 1 
   return (
     <div>
       <div className='todo'> 
       <ul>
-        {todos.map((todo, index) =>(
-          <li key={index} className='li'><div className='div'>{todo}</div> <img src={bin} alt=""/></li>
+        {todos.map((todo, ) =>(
+          <li key={index++} className='li' ><div className='div'>{todo}</div> <img src={bin} alt="" onClick={del}/></li>
         ))}
       </ul>
       <input 
@@ -34,6 +37,7 @@ import bin  from'./image/bin.jpg'
         id='input'
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        onKeyDown={AddTodo}
         /><br />
      <button onClick={AddTodo}>Add</button>
      </div>
