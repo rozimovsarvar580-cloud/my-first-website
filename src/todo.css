@@ -3,18 +3,18 @@
     margin-left: 650px;
 }
 ul li {
+    display: flex;
     color: black;
     list-style-type: none;
     background-color:aqua;
     margin-top: 10px;
 }
-@media ( max-width: 500px) {
-  li {
-     width: 100%;
-  }
+
+.div{
+    width: 950px;
 }
 img{
-    margin-left: 400px;
+    margin-top: 5px;
     border-radius: 50px;
     height: 15px;
     width: 15px;

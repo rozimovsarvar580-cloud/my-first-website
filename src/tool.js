@@ -6,7 +6,9 @@ import bin  from'./image/bin.jpg'
    
     const saved = localStorage.getItem('todos') 
     return saved ? JSON.parse(saved): []
-  })
+  }) 
+  
+
   const [input, setInput] = useState('')
   useEffect(() =>{
     localStorage.setItem('todos', JSON.stringify(todos))
@@ -16,13 +18,14 @@ import bin  from'./image/bin.jpg'
   setTodos([...todos, input])
   setInput('')
  }
- 
+
+
   return (
     <div>
       <div className='todo'> 
       <ul>
         {todos.map((todo, index) =>(
-          <li key={index}>{todo} <img src={bin} alt="" /></li>
+          <li key={index} className='li'><div className='div'>{todo}</div> <img src={bin} alt=""/></li>
         ))}
       </ul>
       <input 

@@ -55,7 +55,7 @@ function Home() {
    <Fragment>
   
     <div className={Navbar}>
-      <NavLink to="/Home"  className={({isActive}) =>( isActive ? 'active' : 'a')} >Home</NavLink>
+      <NavLink to="/"  className={({isActive}) =>( isActive ? 'active' : 'a')} >Home</NavLink>
      <NavLink to="/about"  className={({isActive}) =>( isActive ? 'active' : 'a')} >About</NavLink> 
      <NavLink to='/Plans'  className={({isActive}) =>( isActive ? 'active' : 'a')} >Tool</NavLink> 
      <NavLink to='/SignIn' className={({isActive}) =>( isActive ? 'active' : 'a')} >Log-In</NavLink> 
@@ -64,7 +64,7 @@ function Home() {
      </div>
    </Fragment>
    <Routes>
-    <Route path="/Home" element={<App />}></Route>
+    <Route path="/" element={<App />}></Route>
     <Route path='/about' element={<About />}></Route>
     <Route path='/Plans' element={<Plans />}></Route>
     <Route path='/SignIn' element={<SingIn />}></Route>
