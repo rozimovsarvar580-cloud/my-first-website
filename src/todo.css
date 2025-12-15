@@ -3,9 +3,19 @@
     margin-left: 650px;
 }
 ul li {
-    width: 500px;
     color: black;
     list-style-type: none;
     background-color:aqua;
     margin-top: 10px;
+}
+@media ( max-width: 500px) {
+  li {
+     width: 100%;
+  }
+}
+img{
+    margin-left: 400px;
+    border-radius: 50px;
+    height: 15px;
+    width: 15px;
 }
