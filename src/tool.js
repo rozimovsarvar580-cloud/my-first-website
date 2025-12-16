@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './todo.css'
 import bin  from'./image/bin.jpg'
+import pencil  from'./image/pencil.jpg'
  function Plans() {
   const [todos, setTodos] = useState(() =>{
    
@@ -18,17 +19,26 @@ import bin  from'./image/bin.jpg'
   setTodos([...todos, input])
   setInput('')
  }
-const del = (e) =>{
-e.target.parentElement.remove()
 
+const del = (indexToDelete) =>{
+setTodos(todos.filter((_, index)=> index !== indexToDelete))
 }
-let index = 1 
+const handleKey = (e) =>{
+  
+if(e.key === 'Enter'){
+  AddTodo()
+}
+}
   return (
     <div>
       <div className='todo'> 
       <ul>
-        {todos.map((todo, ) =>(
-          <li key={index++} className='li' ><div className='div'>{todo}</div> <img src={bin} alt="" onClick={del}/></li>
+        {todos.map((todo,index ) =>(
+          <li key={index} className='li' >
+            <div className='div'>{todo}</div>
+             <img src={bin} alt="" onClick={() => del(index)}/>
+             <img src={pencil} alt="" />
+             </li>
         ))}
       </ul>
       <input 
@@ -37,7 +47,7 @@ let index = 1
         id='input'
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        onKeyDown={AddTodo}
+        onKeyDown={handleKey}
         /><br />
      <button onClick={AddTodo}>Add</button>
      </div>
