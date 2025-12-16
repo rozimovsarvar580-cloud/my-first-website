@@ -85,4 +85,12 @@ box-shadow: -10px 10px 10px #1f1f3a;
 body.dark .a:hover{
 box-shadow: -10px 10px 10px #316a74;
 }
+body.light .active{
+  background-color: limegreen;
+  color: black;
+}
+body.dark .active{
+  background-color: limegreen;
+  color: white;
+}
 

@@ -14,8 +14,19 @@ function SingUp(){
           setError('Please fill both fields')
           return
       }
-      localStorage.setItem('Email', email)
-      localStorage.setItem('Password', password)
+      const users = JSON.parse(localStorage.getItem('users')) || []
+      const userExists = users.some((user) =>(user.email === email))
+    if(userExists){
+    alert('You already have account')
+    }else{
+       
+    }
+     
+       localStorage.setItem('users' , JSON.stringify(users))
+       users.push({email,password})  
+       setEmail('')
+       setPassword('')
+       console.log(users)
       }
       
       return(

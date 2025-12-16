@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link  } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link , NavLink } from 'react-router-dom';
 import './App.css';
 import About from './about';
 import Plans from './Plans';
@@ -49,30 +49,33 @@ function Home() {
       setImage(moon)
     }
    }
-  const active = (e) =>{
-       const href = e.target.href 
-       e.target.className = 'active'
-       
-  }
+  let i = 1
+  let sum= 0
+  do{
+    sum=sum+i
+    i++
+  
+  }while(i<=10)
+    console.log(sum)
   return (
    
    <BrowserRouter>
    <Fragment>
-    <div className={Navbar}>
-      <Link to="/Home"  className='a' onClick={active}>Home</Link>
-     <Link to="/about"  className='a' onClick={active}>About</Link> 
-     <Link to='/Plans'  className='a' onClick={active}>Plans</Link> 
-     <Link to='/SignIn' className='a' onClick={active}>Log-In</Link> 
-     <Link to='/SignUp' className='a' onClick={active} >Sign-Up</Link>
+    <div className={Navbar} >
+     <NavLink to="/"   className={({isActive}) => isActive ? 'active' : 'a'}>Home</  NavLink>
+     <NavLink to="/about"  className={({isActive}) => isActive ? 'active' : 'a'}>About</ NavLink> 
+     <NavLink to='/Plans'  className={({isActive}) => isActive ? 'active' : 'a'}>Plans</NavLink> 
+     <NavLink to='/SignIn' className={({isActive}) => isActive ? 'active' : 'a'}>Log-In</NavLink> 
+     <NavLink to='/SignUp' className={({isActive}) => isActive ? 'active' : 'a'} >Sign-Up</NavLink>
      <img src={image} alt="" className='img' onClick={changeNavbar} />
      </div>
    </Fragment>
    <Routes>
-    <Route path="/Home" element={<App />}></Route>
+    <Route path="/" element={<App />}></Route>
     <Route path='/about' element={<About />}></Route>
     <Route path='/Plans' element={<Plans />}></Route>
     <Route path='/SignIn' element={<SingIn />}></Route>
-    <Route path='/SignUp' element={<SignUp />}></Route>
+    <Route path='/SignUp/*' element={<SignUp />}></Route>
    </Routes>
    </BrowserRouter> 
    
