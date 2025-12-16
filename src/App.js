@@ -1,12 +1,12 @@
-import { BrowserRouter, Routes, Route, Link , NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link ,NavLink } from 'react-router-dom';
 import './App.css';
 import About from './about';
-import Plans from './Plans';
+import Plans from './tool';
 import SignUp from './signUp';
 import SingIn from './LogIn';
 import { Fragment } from 'react/jsx-runtime';
 import { useState, useEffect } from 'react';
-import moon from './image/moon.jpg';
+import moon from './image/moon.png';
 import sun from './image/sun.jpg';
 import './LogIn.css'
 function App() {
@@ -49,24 +49,23 @@ function Home() {
       setImage(moon)
     }
    }
-  let i = 1
-  let sum= 0
-  do{
-    sum=sum+i
-    i++
-  
-  }while(i<=10)
-    console.log(sum)
   return (
-   
+  
    <BrowserRouter>
    <Fragment>
-    <div className={Navbar} >
-     <NavLink to="/"   className={({isActive}) => isActive ? 'active' : 'a'}>Home</  NavLink>
-     <NavLink to="/about"  className={({isActive}) => isActive ? 'active' : 'a'}>About</ NavLink> 
-     <NavLink to='/Plans'  className={({isActive}) => isActive ? 'active' : 'a'}>Plans</NavLink> 
-     <NavLink to='/SignIn' className={({isActive}) => isActive ? 'active' : 'a'}>Log-In</NavLink> 
-     <NavLink to='/SignUp' className={({isActive}) => isActive ? 'active' : 'a'} >Sign-Up</NavLink>
+  
+    <div className={Navbar}>
+      <div className="nav">
+        <a href="/" className='tool'>Utilify</a>
+         
+     <NavLink to="/"  className={({isActive}) =>( isActive ? 'active' : 'a')}  >Home  </NavLink>
+     <NavLink to="/about"  className={({isActive}) =>( isActive ? 'active' : 'a')} >About</NavLink> 
+     <NavLink to='/Plans'  className={({isActive}) =>( isActive ? 'active' : 'a')} >Tools</NavLink> 
+     <NavLink to='/SignIn' className={({isActive}) =>( isActive ? 'active' : 'a')} >Log-In</NavLink> 
+     <NavLink to='/SignUp' className={({isActive}) =>( isActive ? 'active' : 'a')} >Sign-Up</NavLink>
+      </div>
+     
+     
      <img src={image} alt="" className='img' onClick={changeNavbar} />
      </div>
    </Fragment>
@@ -80,7 +79,7 @@ function Home() {
    </BrowserRouter> 
    
   )
-  
+   
 }
 
 export default Home;

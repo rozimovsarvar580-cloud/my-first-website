@@ -1,0 +1,21 @@
+.todo{
+    width: 1024px;
+    margin-left: 650px;
+}
+ul li {
+    display: flex;
+    color: black;
+    list-style-type: none;
+    background-color:aqua;
+    margin-top: 10px;
+}
+
+.div{
+    width: 950px;
+}
+img{
+    margin-top: 5px;
+    border-radius: 50px;
+    height: 15px;
+    width: 15px;
+}
