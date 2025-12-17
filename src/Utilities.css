@@ -1,6 +1,7 @@
 .todo{
     width: 1024px;
     margin-left: 650px;
+    margin-top: 100px;
 }
 ul li {
     display: flex;
@@ -18,4 +19,7 @@ img{
     border-radius: 50px;
     height: 15px;
     width: 15px;
+}
+.hidden{
+    display: none;
 }

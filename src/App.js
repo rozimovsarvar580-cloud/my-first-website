@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link ,NavLink } from 'react-router-dom';
 import './App.css';
 import About from './about';
-import Plans from './tool';
+import Utilities from './Utilities';
 import SignUp from './signUp';
 import SingIn from './LogIn';
 import { Fragment } from 'react/jsx-runtime';
@@ -55,24 +55,24 @@ function Home() {
    <Fragment>
   
     <div className={Navbar}>
-      <div className="nav">
+      <div className="navbar">
         <a href="/" className='tool'>Utilify</a>
          
      <NavLink to="/"  className={({isActive}) =>( isActive ? 'active' : 'a')}  >Home  </NavLink>
      <NavLink to="/about"  className={({isActive}) =>( isActive ? 'active' : 'a')} >About</NavLink> 
-     <NavLink to='/Plans'  className={({isActive}) =>( isActive ? 'active' : 'a')} >Tools</NavLink> 
+     <NavLink to='/Utilities'  className={({isActive}) =>( isActive ? 'active' : 'a')} >Utilities</NavLink> 
      <NavLink to='/SignIn' className={({isActive}) =>( isActive ? 'active' : 'a')} >Log-In</NavLink> 
      <NavLink to='/SignUp' className={({isActive}) =>( isActive ? 'active' : 'a')} >Sign-Up</NavLink>
       </div>
      
-     
-     <img src={image} alt="" className='img' onClick={changeNavbar} />
+     <button className='theme-btn' onClick={changeNavbar}> <img src={image} alt="" /></button>
+    
      </div>
    </Fragment>
    <Routes>
     <Route path="/" element={<App />}></Route>
     <Route path='/about' element={<About />}></Route>
-    <Route path='/Plans' element={<Plans />}></Route>
+    <Route path='/Utilities' element={<Utilities />}></Route>
     <Route path='/SignIn' element={<SingIn />}></Route>
     <Route path='/SignUp/*' element={<SignUp />}></Route>
    </Routes>

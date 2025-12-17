@@ -1,4 +1,4 @@
-
+/* root imported */
 :root {
 --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -19,7 +19,6 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
     --chart-1: 221.2 83.2% 53.3%;
     --chart-2: 262.1 83.3% 57.8%;
     --chart-3: 316.6 73.3% 52.5%;
@@ -27,6 +26,8 @@
     --chart-5: 47.9 95.8% 53.1%;
   --muted-foreground: 215 20% 65%;
 }
+
+/* dark/body */
 body.dark{
 display: black;
 background-color: hsl(var(--background));
@@ -60,34 +61,15 @@ color: hsl(var(--foreground));
   color: #e5e7eb;
 }
 
-.nav{
-  margin-left: 350px;
-   display: flex;
-}
-.Navbar .tool{
-  text-decoration: none;
-  color:white ; 
- font-size: 30px;
- margin-top: 10px;
-}
-.NavbarLight .tool{
-  text-decoration: none;
-  color:black ;
- font-size: 30px;
- margin-top: 10px;
-}
+/* Dark/Navbar */
 .Navbar{
   display: flex;
   border-bottom: solid 1px ;
   border-color: hsl(var(--border));
-  height: 60px;
+  height: 70px;
 }
-.NavbarLight{
-  display: flex;
-  border-bottom: solid 1px ;
-  border-color: hsl(var(--border));
-  height: 60px;
-}
+
+/* Dark/a */
 .Navbar .a{
   color:white;
   color: hsl(var(--muted-foreground));
@@ -97,6 +79,117 @@ color: hsl(var(--foreground));
 font-size: 15px;
 cursor: pointer;
 }
+
+/* Dark/ a:hover*/
+.Navbar .a:hover{
+color:dodgerblue;
+}
+
+/* Dark/active*/
+.Navbar .active{
+  color: white;
+text-decoration: none;
+  margin-left: 30px;
+  margin-top: 20px;
+font-size: 18px;
+}
+
+/* Dark/active:hover */
+.Navbar .active:hover{
+color:dodgerblue;
+}
+
+
+
+/* Dark/tool*/
+.Navbar .tool{
+  text-decoration: none;
+  color:white ; 
+ font-size: 30px;
+ margin-top: 10px;
+ font-weight: 700;
+}
+
+/* Dark/img */
+.Navbar img{
+  width: 60px;
+  height: 30px;
+  border-radius:initial;
+  z-index: -1;
+}
+
+/* Dark/theme */
+.Navbar .theme-btn{
+   width: 60px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 700px;
+  cursor: pointer;
+  border: none;
+  background-color: black;   
+  transition: background-color 0.3s ease;
+}
+
+/* Dark/theme:hover */
+.Navbar .theme-btn:hover{
+ background-color: #444;
+}
+
+
+/* Light/body */
+body.light{
+  display:white;
+background-color: hsl(var(--background));
+color: hsl(var(--foreground));
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+    --background: 222.2 0% 99%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 217.2 91.2% 59.8%;
+    --chart-2: 262.1 83.3% 68.2%;
+    --chart-3: 316.6 73.3% 62.5%;
+    --chart-4: 175.9 84.8% 49.8%;
+    --chart-5: 47.9 95.8% 63.1%;
+    
+  color:black;
+}
+/* Light/ Navbar*/
+.NavbarLight{
+  display: flex;
+  border-bottom: solid 1px ;
+  border-color: hsl(var(--border));
+  height: 70px;
+}
+
+/* Light/tool */
+.NavbarLight .tool{
+  text-decoration: none;
+  color:black ;
+ font-size: 30px;
+ margin-top: 10px;
+ font-weight: 700;
+}
+
+
+
+/* Light/ a */
 .NavbarLight .a{
   color:black;
   color: hsl(var(--muted-foreground));
@@ -106,48 +199,54 @@ cursor: pointer;
   font-size: 15px;
   cursor: pointer;
 }
-.Navbar .active{
-  color: white;
+
+/* Light/ active*/
+.NavbarLight .active{
+  color:black;
 text-decoration: none;
   margin-left: 30px;
   margin-top: 20px;
 font-size: 18px;
 }
-.NavbarLight .active{
-  color:black;
-text-decoration: none;
-  margin-left: 30px;
-  margin-top: 25px;
-font-size: 17px;
-}
+/* Light/a:hover */
 .NavbarLight .a:hover{
 color: blue;
 }
+
+/* Light/ active:hover*/
 .NavbarLight .active:hover{
 color: blue;
 }
-.Navbar .active:hover{
-color:dodgerblue;
-}
-.Navbar .a:hover{
-color:dodgerblue;
-}
-.Navbar img{
-  width: 60px;
-  height: 30px;
-  margin-top: 20px;
-  margin-left: 700px;
-  cursor: pointer;
-}
+
+/* Light/img */
 .NavbarLight img{
   width: 60px;
-  height: 30px;
+  height: 40px;
+  border-radius:initial;
+  z-index: -1;
+}
+
+/* Light/ theme*/
+.NavbarLight .theme-btn{  
+     width: 60px;
+  height: 40px;
   margin-top: 20px;
   margin-left: 700px;
   cursor: pointer;
+  border: none;
+ background-color: white;  
+  transition: background-color 0.3s ease;
 }
-.NavbarLight img:hover{
- background-color: grey;
+
+/* Light/theme:hover */
+.NavbarLight .theme-btn:hover{
+background-color: #ddd; 
+}
+
+/* navbar*/
+.navbar{
+  margin-left: 350px;
+   display: flex;
 }
 
 

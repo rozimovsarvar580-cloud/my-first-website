@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
-import './todo.css'
+import './Utilities.css'
 import bin  from'./image/bin.jpg'
 import pencil  from'./image/pencil.jpg'
- function Plans() {
+ function Utilities() {
   const [todos, setTodos] = useState(() =>{
-   
     const saved = localStorage.getItem('todos') 
     return saved ? JSON.parse(saved): []
   }) 
   
-
   const [input, setInput] = useState('')
-  useEffect(() =>{
+
+useEffect(() =>{
     localStorage.setItem('todos', JSON.stringify(todos))
-  }, [todos])
+}, [todos])
+
+
  const AddTodo = () =>{
   if(input.trim() === '') return
   setTodos([...todos, input])
@@ -23,15 +24,24 @@ import pencil  from'./image/pencil.jpg'
 const del = (indexToDelete) =>{
 setTodos(todos.filter((_, index)=> index !== indexToDelete))
 }
+
 const handleKey = (e) =>{
-  
+  console.log(e.key) 
 if(e.key === 'Enter'){
   AddTodo()
 }
+
 }
+
+ const a = (e) =>{
+         
+}
+
   return (
-    <div>
-      <div className='todo'> 
+    <div className='tools'>
+      <div className='Unhidden hidden'>
+      </div>
+      <div className='todo '> 
       <ul>
         {todos.map((todo,index ) =>(
           <li key={index} className='li' >
@@ -40,6 +50,7 @@ if(e.key === 'Enter'){
              <img src={pencil} alt="" />
              </li>
         ))}
+
       </ul>
       <input 
       type="text"
@@ -55,4 +66,4 @@ if(e.key === 'Enter'){
   );
   
 }
-export default Plans
+export default Utilities
